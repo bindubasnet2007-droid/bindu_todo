@@ -41,13 +41,17 @@ function App() {
     }
   ]);
 
+  const handleAddTask = (newTask) => {
+    setTasks([...tasks, newTask]);
+  };
+
   return (
     <div className="app-container">
       <div className="main-content">
         <TopBar />
         <ProgressInfo />
         <StatusTabs />
-        <QuickAdd />
+        <QuickAdd onAddTask={handleAddTask} />
         <TaskSection tasks={tasks} />
       </div>
     </div>
