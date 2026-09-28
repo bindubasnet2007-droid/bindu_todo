@@ -1,0 +1,134 @@
+/* DayBoard Theme Colors */
+/* Background: #F5F1E8 */
+/* Card: #FFFCF5 */
+/* Primary Green: #526D5B */
+/* Dark Text: #2F332F */
+/* Secondary Text: #77756F */
+/* Borders: #DDD7CC */
+/* Completed/Sage: #A8B5A2 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F5F1E8;
+  color: #2F332F;
+  padding: 20px;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 800px;
+  background-color: #FFFCF5;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #DDD7CC;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* TopBar */
+.top-bar {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #DDD7CC;
+}
+
+.top-bar h1 {
+  font-size: 2rem;
+  color: #526D5B;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.top-bar .subtitle {
+  font-size: 0.95rem;
+  color: #77756F;
+  font-weight: 400;
+}
+
+/* Progress Info */
+.progress-info {
+  padding: 15px;
+  background-color: #F5F1E8;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #DDD7CC;
+}
+
+.progress-info p {
+  color: #77756F;
+  font-size: 0.9rem;
+}
+
+/* Status Tabs */
+.status-tabs {
+  padding: 15px;
+  background-color: #F5F1E8;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #DDD7CC;
+}
+
+.status-tabs p {
+  color: #77756F;
+  font-size: 0.9rem;
+}
+
+/* Quick Add */
+.quick-add {
+  padding: 20px;
+  background-color: #FFFCF5;
+  border: 2px solid #526D5B;
+  border-radius: 6px;
+  margin-bottom: 25px;
+}
+
+.quick-add p {
+  color: #77756F;
+  font-size: 0.95rem;
+}
+
+/* Task Section */
+.task-section {
+  padding: 20px;
+  background-color: #F5F1E8;
+  border-radius: 6px;
+  border: 1px solid #DDD7CC;
+  min-height: 200px;
+}
+
+.task-section p {
+  color: #77756F;
+  font-size: 0.95rem;
+}
+
+/* Task Row */
+.task-row {
+  padding: 15px;
+  background-color: #FFFCF5;
+  border: 1px solid #DDD7CC;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.task-row p {
+  color: #77756F;
+  font-size: 0.9rem;
+}
