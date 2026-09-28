@@ -1,6 +1,6 @@
 import TaskRow from './TaskRow';
 
-function TaskSection({ tasks, onToggleTask, onDeleteTask }) {
+function TaskSection({ tasks, onToggleTask, onDeleteTask, onEditTask }) {
   return (
     <div className="task-section">
       {tasks.map((task) => (
@@ -9,6 +9,7 @@ function TaskSection({ tasks, onToggleTask, onDeleteTask }) {
           task={task}
           onToggleTask={onToggleTask}
           onDeleteTask={onDeleteTask}
+          onEditTask={onEditTask}
         />
       ))}
     </div>
