@@ -90,14 +90,14 @@ The application will open in your browser at `http://localhost:3000`
 
 ## Screenshots
 
-### Planner View
-![Planner](./screenshots/planner.png)
-
-### Task Editing
-![Task Editing](./screenshots/edit-task.png)
-
 ### Mobile View
-![Mobile](./screenshots/mobile.png)
+![Mobile View](screenshots/Mobile_view.jpg)
+
+### Planner View
+![Planner View](screenshots/Planner_view.jpg)
+
+### Task Edit
+![Task Edit](screenshots/Task_edit.jpg)
 
 ## Known Limitations
 
