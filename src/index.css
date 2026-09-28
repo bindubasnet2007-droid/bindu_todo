@@ -227,3 +227,38 @@ body {
   color: #77756F;
   font-style: italic;
 }
+
+/* Completed Task Styling */
+.task-row.completed {
+  opacity: 0.6;
+}
+
+.task-row.completed .task-text {
+  text-decoration: line-through;
+  color: #A8B5A2;
+}
+
+/* Task Actions */
+.task-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.delete-button {
+  padding: 6px 12px;
+  background-color: #FFFCF5;
+  color: #77756F;
+  border: 1px solid #DDD7CC;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.delete-button:hover {
+  background-color: #F5F1E8;
+  color: #2F332F;
+  border-color: #77756F;
+}

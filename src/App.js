@@ -45,6 +45,21 @@ function App() {
     setTasks([...tasks, newTask]);
   };
 
+  const handleToggleTask = (taskId) => {
+    setTasks(tasks.map((task) => {
+      if (task.id === taskId) {
+        return { ...task, completed: !task.completed };
+      }
+      return task;
+    }));
+  };
+
+  const handleDeleteTask = (taskId) => {
+    if (window.confirm('Delete this task?')) {
+      setTasks(tasks.filter((task) => task.id !== taskId));
+    }
+  };
+
   return (
     <div className="app-container">
       <div className="main-content">
@@ -52,7 +67,11 @@ function App() {
         <ProgressInfo />
         <StatusTabs />
         <QuickAdd onAddTask={handleAddTask} />
-        <TaskSection tasks={tasks} />
+        <TaskSection
+          tasks={tasks}
+          onToggleTask={handleToggleTask}
+          onDeleteTask={handleDeleteTask}
+        />
       </div>
     </div>
   );
