@@ -143,6 +143,7 @@ function App() {
         <QuickAdd onAddTask={handleAddTask} />
         <TaskSection
           tasks={visibleTasks}
+          allTasks={tasks}
           onToggleTask={handleToggleTask}
           onDeleteTask={handleDeleteTask}
           onEditTask={handleEditTask}

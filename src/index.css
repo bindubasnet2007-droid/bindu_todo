@@ -232,6 +232,24 @@ body {
   min-height: 200px;
 }
 
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.empty-title {
+  font-size: 1.1rem;
+  color: #2F332F;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.empty-subtitle {
+  font-size: 0.95rem;
+  color: #77756F;
+}
+
 .task-section p {
   color: #77756F;
   font-size: 0.95rem;
@@ -423,4 +441,131 @@ body {
   background-color: #F5F1E8;
   color: #2F332F;
   border-color: #77756F;
+}
+
+/* Responsive Design */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .top-bar h1 {
+    font-size: 1.75rem;
+  }
+
+  .quick-add-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="date"],
+  .form-group select {
+    min-width: 100%;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  body {
+    padding: 10px;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .top-bar h1 {
+    font-size: 1.5rem;
+  }
+
+  .top-bar .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .progress-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .status-tabs {
+    gap: 8px;
+  }
+
+  .tab-button {
+    padding: 7px 14px;
+    font-size: 0.85rem;
+  }
+
+  .category-select {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .task-row-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .task-row input[type="checkbox"] {
+    margin-top: 0;
+  }
+
+  .task-actions {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .edit-button,
+  .delete-button {
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .task-meta {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+  .top-bar h1 {
+    font-size: 1.3rem;
+  }
+
+  .status-tabs {
+    gap: 6px;
+  }
+
+  .tab-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .task-actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .edit-button,
+  .delete-button {
+    width: 100%;
+  }
 }
