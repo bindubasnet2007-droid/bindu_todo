@@ -1,7 +1,11 @@
-function TaskSection() {
+import TaskRow from './TaskRow';
+
+function TaskSection({ tasks }) {
   return (
     <div className="task-section">
-      <p>Task List (coming soon)</p>
+      {tasks.map((task) => (
+        <TaskRow key={task.id} task={task} />
+      ))}
     </div>
   );
 }

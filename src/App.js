@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import TopBar from './components/TopBar';
 import ProgressInfo from './components/ProgressInfo';
 import StatusTabs from './components/StatusTabs';
@@ -5,6 +6,41 @@ import QuickAdd from './components/QuickAdd';
 import TaskSection from './components/TaskSection';
 
 function App() {
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      text: "Finish React assignment",
+      category: "Study",
+      dueDate: "2026-09-30",
+      completed: false,
+      createdAt: "2026-09-28"
+    },
+    {
+      id: 2,
+      text: "Buy groceries for dinner",
+      category: "Home",
+      dueDate: "2026-09-28",
+      completed: false,
+      createdAt: "2026-09-28"
+    },
+    {
+      id: 3,
+      text: "Submit project report",
+      category: "Work",
+      dueDate: "2026-10-01",
+      completed: false,
+      createdAt: "2026-09-28"
+    },
+    {
+      id: 4,
+      text: "Call dentist for appointment",
+      category: "Personal",
+      dueDate: "2026-09-29",
+      completed: false,
+      createdAt: "2026-09-28"
+    }
+  ]);
+
   return (
     <div className="app-container">
       <div className="main-content">
@@ -12,7 +48,7 @@ function App() {
         <ProgressInfo />
         <StatusTabs />
         <QuickAdd />
-        <TaskSection />
+        <TaskSection tasks={tasks} />
       </div>
     </div>
   );
