@@ -42,6 +42,7 @@ function App() {
   ]);
 
   const [activeTab, setActiveTab] = useState('All');
+  const [categoryFilter, setCategoryFilter] = useState('All Categories');
 
   const handleAddTask = (newTask) => {
     setTasks([...tasks, newTask]);
@@ -79,27 +80,46 @@ function App() {
   const today = new Date().toISOString().split('T')[0];
 
   const visibleTasks = tasks.filter((task) => {
+    let statusMatch = false;
     if (activeTab === 'All') {
-      return true;
+      statusMatch = true;
+    } else if (activeTab === 'Done') {
+      statusMatch = task.completed === true;
+    } else if (activeTab === 'Today') {
+      statusMatch = task.dueDate === today && task.completed === false;
+    } else if (activeTab === 'Upcoming') {
+      statusMatch = task.dueDate > today && task.completed === false;
     }
-    if (activeTab === 'Done') {
-      return task.completed === true;
+
+    let categoryMatch = false;
+    if (categoryFilter === 'All Categories') {
+      categoryMatch = true;
+    } else {
+      categoryMatch = task.category === categoryFilter;
     }
-    if (activeTab === 'Today') {
-      return task.dueDate === today && task.completed === false;
-    }
-    if (activeTab === 'Upcoming') {
-      return task.dueDate > today && task.completed === false;
-    }
-    return true;
+
+    return statusMatch && categoryMatch;
   });
+
+  const totalTasks = tasks.length;
+  const completedTasks = tasks.filter((task) => task.completed).length;
+  const remainingTasks = totalTasks - completedTasks;
 
   return (
     <div className="app-container">
       <div className="main-content">
         <TopBar />
-        <ProgressInfo />
-        <StatusTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+        <ProgressInfo
+          totalTasks={totalTasks}
+          completedTasks={completedTasks}
+          remainingTasks={remainingTasks}
+        />
+        <StatusTabs
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          categoryFilter={categoryFilter}
+          setCategoryFilter={setCategoryFilter}
+        />
         <QuickAdd onAddTask={handleAddTask} />
         <TaskSection
           tasks={visibleTasks}

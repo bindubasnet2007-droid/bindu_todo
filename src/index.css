@@ -65,23 +65,41 @@ body {
 
 /* Progress Info */
 .progress-info {
-  padding: 15px;
+  padding: 12px 15px;
   background-color: #F5F1E8;
   border-radius: 6px;
   margin-bottom: 20px;
   border: 1px solid #DDD7CC;
 }
 
-.progress-info p {
+.progress-text {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.progress-main {
+  color: #2F332F;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.progress-remaining {
   color: #77756F;
   font-size: 0.9rem;
+}
+
+/* Filter Container */
+.filter-container {
+  margin-bottom: 20px;
 }
 
 /* Status Tabs */
 .status-tabs {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
 }
 
@@ -111,6 +129,30 @@ body {
 
 .tab-button.active:hover {
   background-color: #3f5447;
+}
+
+/* Category Filter */
+.category-filter {
+  display: flex;
+  align-items: center;
+}
+
+.category-select {
+  padding: 8px 12px;
+  border: 1px solid #DDD7CC;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #2F332F;
+  background-color: #FFFCF5;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.category-select:focus {
+  outline: none;
+  border-color: #526D5B;
 }
 
 /* Quick Add */
