@@ -1,7 +1,17 @@
-function StatusTabs() {
+function StatusTabs({ activeTab, setActiveTab }) {
+  const tabs = ['Today', 'Upcoming', 'Done', 'All'];
+
   return (
     <div className="status-tabs">
-      <p>Status Tabs (coming soon)</p>
+      {tabs.map((tab) => (
+        <button
+          key={tab}
+          className={`tab-button ${activeTab === tab ? 'active' : ''}`}
+          onClick={() => setActiveTab(tab)}
+        >
+          {tab}
+        </button>
+      ))}
     </div>
   );
 }

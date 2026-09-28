@@ -79,16 +79,38 @@ body {
 
 /* Status Tabs */
 .status-tabs {
-  padding: 15px;
-  background-color: #F5F1E8;
-  border-radius: 6px;
+  display: flex;
+  gap: 10px;
   margin-bottom: 20px;
-  border: 1px solid #DDD7CC;
+  flex-wrap: wrap;
 }
 
-.status-tabs p {
+.tab-button {
+  padding: 8px 16px;
+  background-color: #FFFCF5;
   color: #77756F;
+  border: 1px solid #DDD7CC;
+  border-radius: 4px;
   font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.tab-button:hover {
+  background-color: #F5F1E8;
+  color: #2F332F;
+}
+
+.tab-button.active {
+  background-color: #526D5B;
+  color: #FFFCF5;
+  border-color: #526D5B;
+}
+
+.tab-button.active:hover {
+  background-color: #3f5447;
 }
 
 /* Quick Add */

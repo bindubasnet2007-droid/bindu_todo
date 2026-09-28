@@ -41,6 +41,8 @@ function App() {
     }
   ]);
 
+  const [activeTab, setActiveTab] = useState('All');
+
   const handleAddTask = (newTask) => {
     setTasks([...tasks, newTask]);
   };
@@ -74,15 +76,33 @@ function App() {
     }));
   };
 
+  const today = new Date().toISOString().split('T')[0];
+
+  const visibleTasks = tasks.filter((task) => {
+    if (activeTab === 'All') {
+      return true;
+    }
+    if (activeTab === 'Done') {
+      return task.completed === true;
+    }
+    if (activeTab === 'Today') {
+      return task.dueDate === today && task.completed === false;
+    }
+    if (activeTab === 'Upcoming') {
+      return task.dueDate > today && task.completed === false;
+    }
+    return true;
+  });
+
   return (
     <div className="app-container">
       <div className="main-content">
         <TopBar />
         <ProgressInfo />
-        <StatusTabs />
+        <StatusTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         <QuickAdd onAddTask={handleAddTask} />
         <TaskSection
-          tasks={tasks}
+          tasks={visibleTasks}
           onToggleTask={handleToggleTask}
           onDeleteTask={handleDeleteTask}
           onEditTask={handleEditTask}
