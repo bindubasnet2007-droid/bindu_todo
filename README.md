@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# DayBoard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+DayBoard is a React-based daily planner application that helps users organize their tasks efficiently. The application allows users to add, edit, complete, and delete tasks with categories and due dates. Tasks are automatically saved to browser localStorage, ensuring data persists across sessions.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Add tasks with text, category, and due date
+- Edit tasks inline (text, category, due date)
+- Delete tasks with confirmation
+- Mark tasks as complete
+- Mark completed tasks as active again
+- Four task categories: Study, Home, Work, Personal
+- Due date tracking
+- Today filter (tasks due today)
+- Upcoming filter (future tasks)
+- Done filter (completed tasks)
+- All filter (show all tasks)
+- Category filter (filter by specific category)
+- Combined filtering (status + category work together)
+- Progress information (tasks completed and remaining)
+- localStorage persistence (tasks saved automatically)
+- Responsive layout (desktop, tablet, and mobile)
+- Empty state messages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- Create React App
+- JavaScript
+- CSS
+- Browser localStorage
 
-### `npm test`
+## React Concepts Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Functional components
+- useState
+- useEffect
+- Props
+- Callback props
+- Controlled forms
+- Event handling
+- List rendering with .map()
+- Array filtering with .filter()
+- Conditional rendering
+- Conditional CSS classes
+- Component composition
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### TopBar
+Displays the application title "DayBoard" and subtitle "Plan today. Finish what matters."
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### QuickAdd
+Handles task creation with a form containing task text input, category dropdown, and due date picker. Uses controlled inputs and validates that task text is not empty before adding.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### TaskRow
+Displays and manages individual tasks. Shows checkbox, task details (text, category, due date, status), and action buttons (Edit, Delete). Switches to inline edit mode when Edit is clicked, allowing users to modify task properties.
 
-### `npm run eject`
+### TaskSection
+Displays the list of tasks by mapping over the tasks array. Shows empty state messages when no tasks exist or when filters return no results.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### StatusTabs
+Controls task status filtering with tab buttons (Today, Upcoming, Done, All) and includes a category filter dropdown. Both filters work together to show the desired tasks.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### ProgressInfo
+Displays task completion progress showing the number of completed tasks, total tasks, and remaining tasks. Values are calculated from the tasks array, not stored as state.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### App
+The main component that stores task state and manages all task operations (add, edit, delete, toggle). Contains filtering logic for status and category, and handles localStorage persistence with useEffect.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Installation
 
-## Learn More
+1. Clone or download the project
+2. Navigate to the project directory:
+   ```
+   cd dayboard
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+4. Start the development server:
+   ```
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The application will open in your browser at `http://localhost:3000`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Screenshots
 
-### Code Splitting
+### Planner View
+![Planner](./screenshots/planner.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Task Editing
+![Task Editing](./screenshots/edit-task.png)
 
-### Analyzing the Bundle Size
+### Mobile View
+![Mobile](./screenshots/mobile.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Known Limitations
 
-### Making a Progressive Web App
+- Data is stored only in the current browser using localStorage
+- No user accounts or authentication
+- No backend database
+- No synchronization between devices or browsers
+- No cloud backup of tasks
+- Tasks are tied to the browser and cannot be accessed from other devices
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## How to Use
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Add a Task**: Fill in the task description, select a category, choose a due date, and click "Add Task"
+2. **Complete a Task**: Click the checkbox next to a task to mark it as complete
+3. **Edit a Task**: Click the "Edit" button, modify the task details, and click "Save" (or "Cancel" to discard changes)
+4. **Delete a Task**: Click the "Delete" button and confirm the deletion
+5. **Filter Tasks**: Click on status tabs (Today, Upcoming, Done, All) or select a category from the dropdown
+6. **View Progress**: Check the progress bar at the top to see how many tasks you've completed
